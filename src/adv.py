@@ -3,7 +3,7 @@ from room import Room
 from player import Player
 # Declare all the rooms
 
-room = {
+rooms = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
 
@@ -20,19 +20,52 @@ to north. The smell of gold permeates the air."""),
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
+'playersPocket':Room("Players Pocket","""Where all the Important Items from your Journey Are Stored""")
 }
+print(rooms)
+class Room:
+    def __init__(self, name, description,position, n_to='',s_to='',e_to='',w_to=''):
+        self.name=name
+        self.description = description
+        self.position=position
+        self.n_to=self.position[0]
+        self.s_to=self.position[1]
+        self.e_to=self.position[2]
+        self.w_to=self.position[3]
+    def __repr__(self):
+        return f'{self.name}\n {self.description}\n {self.postion}\n items:{self.items}'
+
+    def __str__(self):
+        return f'{self.name} \n {self.description}'
+
+    def searchForItems(self):
+        if len(items)>0:
+            print(f'You found {items[-1]}')
+            foundItem=True
+        while foundItem==True:
+            selection = int(input(f'Pick up {items[-1]}? \n 1:Yes  \n 2:No'))
+            if selection == 1:
+                    item.currentlocation=rooms["playerspocket"]
+            elif selction==2:
+                    item.currentLocation=item.currentLocation
+        print(f'Nothing to be found here 🙈')
+
+
+
+        
 
 
 # Link rooms together
 
-room['outside'].n_to = room['foyer']
-room['foyer'].s_to = room['outside']
-room['foyer'].n_to = room['overlook']
-room['foyer'].e_to = room['narrow']
-room['overlook'].s_to = room['foyer']
-room['narrow'].w_to = room['foyer']
-room['narrow'].n_to = room['treasure']
-room['treasure'].s_to = room['narrow']
+rooms['outside'].n_to = rooms['foyer']
+rooms['foyer'].s_to = rooms['outside']
+rooms['foyer'].n_to = rooms['overlook']
+rooms['foyer'].e_to = rooms['narrow']
+rooms['overlook'].s_to = rooms['foyer']
+rooms['narrow'].w_to = rooms['foyer']
+rooms['narrow'].n_to = rooms['treasure']
+rooms['narrow'].n_to = rooms['treasure']
+rooms['playersPocket'].s_to = rooms['narrow']
 
 #
 # Main
@@ -52,3 +85,6 @@ playerOne=Player(outside)
 #
 # If the user enters "q", quit the game.
 
+
+
+#gameplayloop
