@@ -22,35 +22,39 @@ chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 'playersPocket':Room("Players Pocket","""Where all the Important Items from your Journey Are Stored""")
 }
-print(rooms)
-class Room:
-    def __init__(self, name, description,position, n_to='',s_to='',e_to='',w_to=''):
-        self.name=name
-        self.description = description
-        self.position=position
-        self.n_to=self.position[0]
-        self.s_to=self.position[1]
-        self.e_to=self.position[2]
-        self.w_to=self.position[3]
-    def __repr__(self):
-        return f'{self.name}\n {self.description}\n {self.postion}\n items:{self.items}'
 
-    def __str__(self):
-        return f'{self.name} \n {self.description}'
-
-    def searchForItems(self):
-        if len(items)>0:
-            print(f'You found {items[-1]}')
-            foundItem=True
-        while foundItem==True:
-            selection = int(input(f'Pick up {items[-1]}? \n 1:Yes  \n 2:No'))
-            if selection == 1:
-                    item.currentlocation=rooms["playerspocket"]
-            elif selction==2:
-                    item.currentLocation=item.currentLocation
-        print(f'Nothing to be found here 🙈')
+map=[rooms]
+print(map)
+# class Room:
+#     def __init__(self, name, description, items=[], n_to='',s_to='',e_to='',w_to=''):
+#         self.name=name
+#         self.description = description
+#         self.items=items   
+#         self.n_to=n_to
+#         self.s_to=s_to
+#         self.e_to=e_to
+#         self.w_to=w_to
 
 
+
+#     def __repr__(self):
+#         return f'{self.name}\n {self.description}\n to the:\nnorth={self.n_to}\n\neast={self.e_to}\n\nsouth={self.s_to}\n\nwest={self.w_to}\n items:{self.items}'
+
+
+#     def __str__(self):
+#         return f'{self.name} \n {self.description}'
+
+#     def searchForItems(self):
+#         if len(items)>0:
+#             print(f'You found {items[-1]}')
+#             foundItem=True
+#         while foundItem==True:
+#             selection = int(input(f'Pick up {items[-1]}? \n 1:Yes  \n 2:No'))
+#             if selection == 1:
+#                     item.currentlocation=rooms["playerspocket"]
+#             elif selction==2:
+#                     item.currentLocation=item.currentLocation
+#         print(f'Nothing to be found here 🙈')
 
         
 
