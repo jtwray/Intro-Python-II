@@ -1,0 +1,79 @@
+PRoBLEM SoLVING iN PYTHoN SoFTWARE DEVELoPMENT
+...U.uNDERSTaND..P.pLaN..E.exECUTE..R.reFLECT...
+using pseudocode to come up with a plan of action
+1.list out all the variables
+	-contemplate their types and attributes
+2.list out functionality
+	-define a happy path from start to finish for a user
+3.sanity check variables with the defines functionality
+	-make any adjustments
+
+
+ 
+##VARiABLES
+
+
+enterroom_message
+options_message
+start_message
+quit_message
+item_message
+pick_up_Item_message
+drop_item_message
+
+classes
+
+player(description,name,currentRoom=outside,items=[],notes=[{}])
+room(description,sides(n_to,e_to,s_to,w_to),items=[])
+item(description,currentRoom=rooms[random[i]])
+map(rooms,items,player)
+
+ ##PRoCEDURE
+	--The Happy Path--
+
+run start script
+
+offerplayingoptions
+	-new game
+	-view saved games
+		-continue saved game
+		-delete saved game
+	-quit
+
+display start_message
+-greet player
+-name current room
+
+
+load_last_stats=player(currentRoom,items),map(rooms,room_items)
+
+print option_list
+1travel
+	1back
+	2go n
+	3go s
+	4go e
+	5go w
+	
+2items
+	1back
+	2view list
+	3select item
+		1back
+		2description
+		3drop
+		
+3take notes (about current room and items)
+	input argv store on player.notes
+
+4save/quit
+	main screen
+		offerplayingoptions
+
+
+room(sides,description,items=[])
+player(name,currentRoom=outside,items=[],notes=[{}])
+map(rooms,items,player)
+item(description,currentRoom=rooms[random[i]])
+
+

@@ -1,0 +1,115 @@
+Room:has-a:Item
+-description
+-sides
+-items=[]
+
+Item:has-a:Room
+-description
+-currentRoom
+-ispickedup||currentRoom=PlayersPocket
+
+Notepad:has-a:Note
+Notepad:is-a:Item
+-description
+-currentRoom=PlayersPocket
+-notes[]
+
+Note
+-description
+-timestamp
+__str__
+
+Player:has-a:Room
+Player:has-a:Item
+Player:has-a:Notepad
+-description
+-items[]
+-currentRoom
+-notepad
+--pickupitem()
+--readnotepad
+--writenote
+--deletenote
+--move
+__repr__loopthroughallattributes
+__str__currentRoom,name
+
+
+Map(CurrentRooms,Player,Items)
+
+
+
+
+
+Map( currentRooms(items),Player(items),Items(room))
+
+Menu(options,description,input)
+travelmenu
+itemsmenu
+notesmenu
+savequitmenu
+startMenu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Don’t judge each day by the harvest you reap but by the seeds that you plant.
+~ Robert Louis Stevenson
+
+“You are never too old to set another goal or to dream a new dream.”
+~ C. S. Lewis
+
+Rule your mind or it will rule you.
+
+Never confuse movement with progress. Because you can run in place and not get anywhere.
+~ Denzel Washington
+
+Motivation is what gets you started. Habit is what keeps you going.
+~ Jim Ryun
+
+Climb the mountain so you can see the world, not so the world can see you.
+~ David McCullough Jr.
+
+I am not a product of my circumstances. I am a product of my decisions.
+~ Stephen Covey
+
+You don't learn to walk by following rules.
+You learn by doing, and by falling over.
+~ Richard Branson
+
+Doubt everything. Find your own light.
+~ Buddha
+
+Ask for what you want and be prepared to get it!
+~ Maya Angelou
